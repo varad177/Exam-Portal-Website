@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact us</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://kit.fontawesome.com/b0a4a992bb.js" crossorigin="anonymous"></script>
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <!-- <script src="contact.js"></script> -->
+</head>
+
+<body>
+    <section id="contactpage">
+        <div id="navbar">
+
+            <div id="logo">
+                <img src="images/logoo.jpeg" alt="loading image">
+            </div>
+            <h1 class="priheading center">WELCOME TO EXAM PORTAL WEBSITE</h1>
+
+        </div>
+
+        <input type="checkbox" id="opensidebar">
+        <label for="opensidebar" class="sidebaricon">
+            <div class="spinner top"></div>
+            <div class="spinner middle"></div>
+            <div class="spinner bottom"></div>
+        </label>
+
+
+        <div id="sidebarmenu">
+            <ul class="menu">
+                <li><a href="_a" target="_blank"><i class="fa-solid fa-graduation-cap"></i> STUDENT PROFILE</a></li>
+                <li><a href="_a" target="_blank"><i class="fa-solid fa-pen"></i> EXAMS</a></li>
+                <li><a href="_a" target="_blank"><i class="fa-solid fa-book-open-reader"></i> COURSES</a></li>
+                <li><a href="_a" target="_blank"><i class="fa-solid fa-chalkboard-user"></i> MENTOR</a></li>
+                <li><a href="_a" target="_blank"><i class="fa-solid fa-phone"></i> CONTACT US</a></li>
+                <li class="sp"><a href="samplepaper.html" target="_blank"><i class="fa-solid fa-paper-plane"></i> SAMPLE
+                        PAPER</a></li>
+            </ul>
+            </ul>
+        </div>
+
+        <div id="contactus">
+            <form class="contactform"  onsubmit="">
+                <!-- <form action="https://formsubmit.co/examportal6862@email.com" method="POST" class="contactform" target="_blank"> -->
+                <h1 id="contactheading">CONTACT US</h1>
+                <div class="contactdiv">
+                    <label for="fname">FIRST NAME :-</label>
+                    <input class="inputtag" type="text" id="fname" name="fname" placeholder="Enter Your First Name"
+                        required>
+                    <label for="lname">LAST NAME :-</label>
+                    <input class="inputtag" type="text" id="lname" name="lname" placeholder="Enter Your Last Name"
+                        required>
+                </div>
+                <div class="contactdiv">
+                    <label for="email">YOUR EMAIL :-</label>
+                    <input class="inputtag" type="email" id="email" name="email" placeholder="Enter Your Email"
+                        required>
+                    <label for="phoneno">PHONE-NO :-</label>
+                    <input class="inputtag" type="tel" id="phoneno" name="phoneno" placeholder="Enter Your Phone-No"
+                        required>
+                </div>
+                <label id="textarea" for="yourmsg" required>WRITE YOUE MESSAGE :-</label>
+                <textarea name="yourmsg" placeholder="write your message here" id="yourmsg" cols="30"
+                    rows="10"></textarea>
+                <div class="contactdiv">
+                    <input type="submit" id="submit">
+                    <input type="reset" id="reset">
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+
+        var fname = document.getElementById('fname').value
+        var lname = document.getElementById('lname').value
+        var email = document.getElementById('email').value
+        var phoneno = document.getElementById('phoneno').value
+        var yourmsg = document.getElementById('yourmsg').value
+
+        // var fname = $('#fname').val()
+        // var lname = $('#lname').val()
+        // var email = $('#email').val()
+        // var phoneno = $('#phoneno').val()
+        // var yourmsg = $('#yourmsg').val()
+
+        var Body = 'name: ' + fname + lname + '<br> email:' + email + '<br> body:' + yourmsg + '<br>'
+
+        function sendemail() {
+
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "examportal6862@gmail.com",
+                Password: "C654C7420AF45CB89C63256B2812D9F9B66E",
+                To: "varaddhumale177@gmail.com",
+                From:"examportal6862@gmail.com" ,
+                Body: body
+            }).then(
+                message => alert("message")
+            );
+
+        }
+
+    </script>
+</body>
+
+</html>

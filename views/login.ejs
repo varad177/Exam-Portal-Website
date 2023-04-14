@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link rel="stylesheet" href="css/style.css" />
+   
+    <script
+      src="https://kit.fontawesome.com/b0a4a992bb.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section id="signup_login">
+      <div id="navbar">
+        <div id="logo">
+          <img src="images/logoo.jpeg" alt="loading image" />
+        </div>
+        <h1 class="priheading center">WELCOME TO EXAM PORTAL WEBSITE</h1>
+      </div>
+      <div class="formout">
+        <div class="formbox">
+          <h1 id="title">Sign Up</h1>
+          <form action="">
+            <div class="inputgrp">
+              <div class="inputfield" id="namefield">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" placeholder="User Name" />
+              </div>
+              <div class="inputfield">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" placeholder="Your Email" />
+              </div>
+              <div class="inputfield">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Password" />
+              </div>
+              <div class="inputfield">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Confirm Password" />
+              </div>
+              <p><a href="">Forgot Password</a></p>
+            </div>
+            <div class="btn">
+                <button type="button" id="signinbtn">Sign Up</button>
+                <button type="button" id="loginbtn" class="disable">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+        let signinbtn = document.getElementById("signinbtn");
+        let loginbtn = document.getElementById("loginbtn");
+        let namefield = document.getElementById("namefield");
+        let title = document.getElementById("title");
+
+        loginbtn.onclick = function(){
+            namefield.style.maxHeight = "0";
+            title.innerHTML= "Login"
+            signinbtn.classList.add("disable");
+            loginbtn.classList.remove("disable");
+        }
+        
+        signinbtn.onclick = function(){
+            namefield.style.maxHeight = "65px";
+            title.innerHTML= "Sign Up"
+            signinbtn.classList.remove("disable");
+            loginbtn.classList.add("disable");
+        }
+    </script>
+  </body>
+</html>
